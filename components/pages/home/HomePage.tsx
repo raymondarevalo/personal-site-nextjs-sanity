@@ -17,7 +17,12 @@ export interface HomePageProps {
 }
 
 export function HomePage({ page, settings, preview }: HomePageProps) {
-  const { overview, showcaseProjects, title = 'Personal website' } = page ?? {}
+  const {
+    overview,
+    showcaseProjects,
+    endDescription,
+    title = 'Personal website',
+  } = page ?? {}
 
   return (
     <>
@@ -45,6 +50,8 @@ export function HomePage({ page, settings, preview }: HomePageProps) {
               })}
             </div>
           )}
+
+          {endDescription && <p></p>}
 
           {/* Workaround: scroll to top on route change */}
           <ScrollUp />

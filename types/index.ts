@@ -32,6 +32,7 @@ export interface HomePagePayload {
   footer?: PortableTextBlock[]
   overview?: PortableTextBlock[]
   showcaseProjects?: ShowcaseProject[]
+  endDescription?: PortableTextBlock[]
   title?: string
 }
 

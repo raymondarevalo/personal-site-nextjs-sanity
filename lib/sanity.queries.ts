@@ -13,6 +13,7 @@ export const homePageQuery = groq`
       tags,
       title,
     },
+    endDescription,
     title,
   }
 `

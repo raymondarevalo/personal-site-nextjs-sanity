@@ -49,6 +49,7 @@ const fallbackPage: HomePagePayload = {
   title: '',
   overview: [],
   showcaseProjects: [],
+  endDescription: [],
 }
 
 export const getStaticProps: GetStaticProps<
