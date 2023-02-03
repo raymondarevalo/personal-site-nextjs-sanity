@@ -28,6 +28,7 @@ export function HomePage({ page, settings, preview }: HomePageProps) {
     <>
       <Head>
         <HomePageHead page={page} settings={settings} />
+        <title>Raymond Arevalo - Web Developer</title>
       </Head>
 
       <Layout settings={settings} preview={preview}>
