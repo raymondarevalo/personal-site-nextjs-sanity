@@ -23,8 +23,7 @@ export default function Layout({
   return (
     <div className="flex min-h-screen flex-col bg-white text-black">
       {preview && <PreviewBanner />}
-      <Navbar menuItems={settings?.menuItems} />
-      <div className="mt-20 flex-grow px-4 md:px-16 lg:px-32">{children}</div>
+      <div className="mt-10 flex-grow px-6 md:px-10 lg:px-16">{children}</div>
       <Footer footer={settings?.footer} />
       <IntroTemplate />
     </div>

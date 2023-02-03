@@ -31,12 +31,12 @@ export function HomePage({ page, settings, preview }: HomePageProps) {
       </Head>
 
       <Layout settings={settings} preview={preview}>
-        <div className="space-y-20">
+        <div className="space-y-20 md:space-y-32">
           {/* Header */}
-          {title && <Header centered title={title} description={overview} />}
+          {overview && <Header description={overview} />}
           {/* Showcase projects */}
           {showcaseProjects && showcaseProjects.length > 0 && (
-            <div className="mx-auto max-w-[100rem] rounded-md border">
+            <div className="mx-auto grid max-w-[100rem] grid-cols-1 sm:gap-10 md:gap-16 lg:grid-cols-2">
               {showcaseProjects.map((project, key) => {
                 const href = resolveHref(project._type, project.slug)
                 if (!href) {
@@ -51,7 +51,7 @@ export function HomePage({ page, settings, preview }: HomePageProps) {
             </div>
           )}
 
-          {endDescription && <p></p>}
+          {endDescription && <Header description={endDescription} />}
 
           {/* Workaround: scroll to top on route change */}
           <ScrollUp />

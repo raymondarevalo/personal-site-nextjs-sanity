@@ -11,19 +11,15 @@ export function ProjectListItem(props: ProjectProps) {
   const { project, odd } = props
 
   return (
-    <div
-      className={`flex flex-col gap-x-5 p-2 transition hover:bg-gray-50/50 xl:flex-row ${
-        odd && 'border-t border-b xl:flex-row-reverse'
-      }`}
-    >
-      <div className="w-full xl:w-9/12">
+    <div className={`flex flex-row gap-x-5 transition `}>
+      <div className="w-1/2">
         <ImageBox
           image={project.coverImage}
           alt={`Cover image from ${project.title}`}
-          classesWrapper="relative aspect-[16/9]"
+          classesWrapper="relative aspect-square"
         />
       </div>
-      <div className="flex xl:w-1/4">
+      <div className="flex w-1/2">
         <TextBox project={project} />
       </div>
     </div>
@@ -32,22 +28,31 @@ export function ProjectListItem(props: ProjectProps) {
 
 function TextBox({ project }: { project: ShowcaseProject }) {
   return (
-    <div className="relative mt-2 flex w-full flex-col justify-between p-3 xl:mt-0">
+    <div className="relative flex w-full flex-col justify-between">
       <div>
         {/* Title */}
-        <div className="mb-2 text-xl font-extrabold tracking-tight md:text-2xl">
+        <div className="mb-2 text-[1.5rem] font-normal leading-tight tracking-tight md:text-[2.5rem] md:tracking-tighter">
           {project.title}
         </div>
         {/* Overview  */}
-        <div className="font-serif text-gray-500">
+        <div className="text-base leading-none md:text-xl">
           <CustomPortableText value={project.overview} />
         </div>
       </div>
       {/* Tags */}
       <div className="mt-4 flex flex-row gap-x-2">
         {project.tags?.map((tag, key) => (
-          <div className="text-sm font-medium lowercase md:text-lg" key={key}>
-            #{tag}
+          <div
+            className={`rounded-full border-2 border-black px-4 text-sm uppercase ${
+              tag == 'recent client work'
+                ? 'bg-yellow-300'
+                : tag == 'side project'
+                ? 'bg-orange-500'
+                : 'bg-white'
+            }`}
+            key={key}
+          >
+            {tag}
           </div>
         ))}
       </div>
