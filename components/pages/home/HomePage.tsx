@@ -39,11 +39,11 @@ export function HomePage({ page, settings, preview }: HomePageProps) {
             <div className="mx-auto grid max-w-[100rem] grid-cols-1 sm:gap-10 md:gap-16 lg:grid-cols-2">
               {showcaseProjects.map((project, key) => {
                 const href = resolveHref(project._type, project.slug)
-                if (!href) {
+                if (!href && !project.site) {
                   return null
                 }
                 return (
-                  <Link key={key} href={href}>
+                  <Link key={key} href={project.site} target="_blank">
                     <ProjectListItem project={project} odd={key % 2} />
                   </Link>
                 )
@@ -52,6 +52,10 @@ export function HomePage({ page, settings, preview }: HomePageProps) {
           )}
 
           {endDescription && <Header description={endDescription} />}
+
+          <p className="border-t  py-6 text-black">
+            A statically generated site using Next.js and Sanity.
+          </p>
 
           {/* Workaround: scroll to top on route change */}
           <ScrollUp />

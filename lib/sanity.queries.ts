@@ -12,6 +12,7 @@ export const homePageQuery = groq`
       "slug": slug.current,
       tags,
       title,
+      site,
     },
     endDescription,
     title,

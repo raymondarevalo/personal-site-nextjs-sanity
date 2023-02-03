@@ -24,6 +24,7 @@ export interface ShowcaseProject {
   slug?: string
   tags?: string[]
   title?: string
+  site?: string
 }
 
 // Page payloads

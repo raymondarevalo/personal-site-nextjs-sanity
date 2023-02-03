@@ -26,7 +26,7 @@ export function SiteMeta({
 
   return (
     <>
-      <title>{metaTitle || demo.title}</title>
+      <title>Raymond Arevalo - Developer</title>
       <meta name="viewport" content="width=device-width,initial-scale=1.0" />
       <link
         rel="apple-touch-icon"
