@@ -37,7 +37,7 @@ export function HomePage({ page, settings, preview }: HomePageProps) {
           {overview && <Header description={overview} />}
           {/* Showcase projects */}
           {showcaseProjects && showcaseProjects.length > 0 && (
-            <div className="mx-auto grid max-w-[100rem] grid-cols-1 sm:gap-10 md:gap-16 lg:grid-cols-2">
+            <div className="mx-auto grid max-w-[100rem] grid-cols-1 sm:gap-x-5 sm:gap-y-10 md:grid-cols-2 md:gap-x-5 md:gap-y-16">
               {showcaseProjects.map((project, key) => {
                 const href = resolveHref(project._type, project.slug)
                 if (!href && !project.site) {

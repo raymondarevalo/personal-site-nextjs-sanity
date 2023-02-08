@@ -11,15 +11,15 @@ export function ProjectListItem(props: ProjectProps) {
   const { project, odd } = props
 
   return (
-    <div className={`flex flex-row gap-x-5 transition `}>
-      <div className="w-1/2">
+    <div className={`flex flex-col gap-y-5 transition `}>
+      <div className="w-full">
         <ImageBox
           image={project.coverImage}
           alt={`Cover image from ${project.title}`}
           classesWrapper="relative aspect-square"
         />
       </div>
-      <div className="flex w-1/2">
+      <div className="flex w-full">
         <TextBox project={project} />
       </div>
     </div>
