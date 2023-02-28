@@ -28,7 +28,7 @@ export function HomePage({ page, settings, preview }: HomePageProps) {
     <>
       <Head>
         <HomePageHead page={page} settings={settings} />
-        <title>Raymond Arevalo - Web Developer</title>
+        <title>Raymond Arevalo | Shopify Development</title>
       </Head>
 
       <Layout settings={settings} preview={preview}>
@@ -37,7 +37,7 @@ export function HomePage({ page, settings, preview }: HomePageProps) {
           {overview && <Header description={overview} />}
           {/* Showcase projects */}
           {showcaseProjects && showcaseProjects.length > 0 && (
-            <div className="mx-auto grid max-w-[100rem] grid-cols-1 gap-x-5 gap-y-10 md:grid-cols-2 md:gap-x-5 md:gap-y-16">
+            <div className="mx-auto grid max-w-[100rem] grid-cols-1 gap-x-5 gap-y-10 md:grid-cols-2 md:gap-x-8 md:gap-y-16">
               {showcaseProjects.map((project, key) => {
                 const href = resolveHref(project._type, project.slug)
                 if (!href && !project.site) {
@@ -54,7 +54,7 @@ export function HomePage({ page, settings, preview }: HomePageProps) {
 
           {endDescription && <Header description={endDescription} />}
 
-          <p className="border-t  py-6 text-black">
+          <p className="mx-auto grid max-w-[100rem] border-t py-6 text-black">
             A statically generated site using Next.js and Sanity.
           </p>
 

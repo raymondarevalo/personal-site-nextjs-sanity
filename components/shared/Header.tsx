@@ -10,7 +10,7 @@ export function Header(props: HeaderProps) {
     return null
   }
   return (
-    <div>
+    <div className="mx-auto max-w-[100rem]">
       {/* Title */}
       {title && (
         <div className="text-3xl font-extrabold tracking-tight md:text-5xl">

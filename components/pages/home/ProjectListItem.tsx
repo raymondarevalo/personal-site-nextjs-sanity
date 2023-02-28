@@ -12,11 +12,11 @@ export function ProjectListItem(props: ProjectProps) {
 
   return (
     <div className={`flex flex-col gap-y-5 transition `}>
-      <div className="w-full">
+      <div className="rounded-xl w-full">
         <ImageBox
           image={project.coverImage}
           alt={`Cover image from ${project.title}`}
-          classesWrapper="relative aspect-square"
+          classesWrapper="relative aspect-square rounded-md"
         />
       </div>
       <div className="flex w-full">
@@ -31,11 +31,11 @@ function TextBox({ project }: { project: ShowcaseProject }) {
     <div className="relative flex w-full flex-col justify-between">
       <div>
         {/* Title */}
-        <div className="mb-2 text-[1.5rem] font-normal leading-tight tracking-tight md:text-[2.5rem] md:tracking-tighter">
+        <div className="mb-2 text-xl font-normal leading-none md:leading-none">
           {project.title}
         </div>
         {/* Overview  */}
-        <div className="text-base leading-none md:text-xl">
+        <div className="text-base leading-none md:leading-none">
           <CustomPortableText value={project.overview} />
         </div>
       </div>
